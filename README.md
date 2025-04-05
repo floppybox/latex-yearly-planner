@@ -30,14 +30,12 @@ The following was tested with [POP_OS 22.04.1 LTS](https://pop.system76.com/) un
 3. From the project directory, run the following command after updating
  'PLANNER_YEAR' below. This should generate the PDF in the 'out' directory.
 
-<code>
-TRANSLATION=german \
+<code>TRANSLATION=german \
 PLANNER_YEAR=2025 \
 PASSES=1 \
 CFG="cfg/base.yaml,cfg/template_breadcrumb.yaml,cfg/sn_a5x.breadcrumb.default.dailycal.yaml" \
 NAME="sn_a5x.breadcrumb.default.dailycal.default" \
-./single.sh
-</code> 
+./single.sh</code> 
 
 [Source](https://github.com/kudrykv/latex-yearly-planner/discussions/34#discussioncomment-3128344)
 
