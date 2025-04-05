@@ -9,6 +9,8 @@ import (
 	"github.com/kudrykv/latex-yearly-planner/app/components/hyper"
 )
 
+var germanWeekdays = []string{"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"}
+
 type Months []*Month
 
 func (m Months) Months() []time.Month {
@@ -68,13 +70,13 @@ func (m *Month) WeekHeader(large interface{}) string {
 	}
 
 	for i := time.Sunday; i < 7; i++ {
-		name := ((m.Weekday + i) % 7).String()
+		index := (m.Weekday + i) % 7
+		var name string
 		if full {
-			name = `\hfil{}` + name
+			name = `\hfil{}` + ((m.Weekday + i) % 7).String()
 		} else {
-			name = name[:1]
+			name = germanWeekdays[index][:2] // Erster Buchstabe des deutschen Namens
 		}
-
 		names = append(names, name)
 	}
 
